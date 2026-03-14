@@ -1,0 +1,73 @@
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#3b82f6,#1e3a8a);
+margin:0;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+color:white;
+}
+
+h1{
+margin-bottom:5px;
+}
+
+.subtitle{
+margin-bottom:20px;
+color:#cbd5f5;
+}
+
+.container{
+background:white;
+padding:25px;
+width: 360pxpx;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+text-align:center;
+color:black;
+}
+
+input{
+width:90%;
+padding:12px;
+margin:10px 0;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:14px;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:10px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#1d4ed8;
+transform:scale(1.03);
+}
+
+#planList{
+margin-top:20px;
+width:320px;
+padding:0;
+}
+
+#planList li{
+background:white;
+color:black;
+margin:8px 0;
+padding:10px;
+border-radius:6px;
+list-style:none;
+box-shadow:0 3px 6px rgba(0,0,0,0.2);
+}

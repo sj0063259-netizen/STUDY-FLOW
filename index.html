@@ -1,0 +1,36 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyFlow</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>StudyFlow</h1>
+<p class="subtitle">Smart Study Planner</p>
+
+<div class="container">
+
+<input type="text" id="subject" placeholder="Enter Subject">
+
+<input type="date" id="examDate">
+
+<input type="number" id="topics" placeholder="Total Topics">
+
+<button onclick="generatePlan()">Generate Study Plan</button>
+
+<p id="suggestion"></p>
+
+</div>
+
+<h2>Your Study Plan</h2>
+
+<ul id="planList"></ul>
+
+<script src="script.js"></script>
+
+</body>
+</html>
