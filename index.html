@@ -1,36 +1,87 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StudyFlow</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyFlow</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<h1>StudyFlow</h1>
-<p class="subtitle">Smart Study Planner</p>
+  <header>
+    <h1>📘 StudyFlow</h1>
+    <p class="subtitle">Your Smart Study Planner</p>
+  </header>
 
-<div class="container">
+  <main class="container">
 
-<input type="text" id="subject" placeholder="Enter Subject">
+    <section class="planner">
+      <h2>Plan Your Study</h2>
 
-<input type="date" id="examDate">
+      <label for="course">Select Course</label>
+      <select id="course" onchange="loadSubjects()">
+        <option value="">Select Course</option>
+        <option value="ee">Electrical Engineering</option>
+        <option value="cs">Computer Science</option>
+      </select>
 
-<input type="number" id="topics" placeholder="Total Topics">
+      <label for="subject">Select Subject</label>
+      <select id="subject" onchange="showSuggestions(); showBooks();">
+        <option value="">Select Subject</option>
+      </select>
 
-<button onclick="generatePlan()">Generate Study Plan</button>
+      <label for="examDate">Exam Date</label>
+      <input type="date" id="examDate">
 
-<p id="suggestion"></p>
+      <label for="topics">Total Topics</label>
+      <input type="number" id="topics" placeholder="Enter number of topics">
 
+      <button class="btn" onclick="generatePlan()">Generate Study Plan</button>
+      <p id="suggestion" class="highlight"></p>
+    </section>
+
+    <section>
+      <h2>📌 Suggested Important Topics</h2>
+      <ul id="topicSuggestion"></ul>
+    </section>
+
+    <section>
+      <h2>📚 Recommended Books</h2>
+      <ul id="bookList"></ul>
+    </section>
+
+    <section>
+      <h2>📅 Your Study Plan</h2>
+      <div id="progressBox">
+        <p id="progressText">Progress: 0%</p>
+      </div>
+      <ul id="planList"></ul>
+    </section>
+
+    <section>
+      <h2>📝 Topic Notes</h2>
+      <select id="topicSelect">
+        <option value="">Select Topic</option>
+      </select>
+      <textarea id="topicNoteInput" placeholder="Write notes for selected topic"></textarea>
+      <div class="note-buttons">
+        <button class="btn" onclick="saveTopicNote()">Save Note</button>
+        <button class="btn danger" onclick="deleteTopicNote()">Delete Note</button>
+      </div>
+      <div id="topicNotesDisplay" class="note-display"></div>
+    </section>
+    <div id="progressBox">
+  <p id="progressText">Progress: 0%</p>
+  <div id="progressBar"></div>
 </div>
 
-<h2>Your Study Plan</h2>
 
-<ul id="planList"></ul>
+  </main>
 
-<script src="script.js"></script>
+  <footer>
+    <p>Made with ❤️ for smarter studying</p>
+  </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

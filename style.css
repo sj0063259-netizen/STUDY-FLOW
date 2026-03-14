@@ -1,73 +1,123 @@
-body{
-font-family: Arial, sans-serif;
-background: linear-gradient(135deg,#3b82f6,#1e3a8a);
-margin:0;
-min-height:100vh;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-color:white;
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  color: #333;
 }
 
-h1{
-margin-bottom:5px;
+header {
+  text-align: center;
+  padding: 2rem;
+  background: #4a69bd;
+  color: white;
 }
 
-.subtitle{
-margin-bottom:20px;
-color:#cbd5f5;
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
 }
 
-.container{
-background:white;
-padding:25px;
-width: 360pxpx;
-border-radius:12px;
-box-shadow:0 8px 20px rgba(0,0,0,0.2);
-text-align:center;
-color:black;
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-input{
-width:90%;
-padding:12px;
-margin:10px 0;
-border-radius:6px;
-border:1px solid #ccc;
-font-size:14px;
+h2 {
+  border-bottom: 2px solid #4a69bd;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
 }
 
-button{
-width:100%;
-padding:12px;
-margin-top:10px;
-background:#2563eb;
-color:white;
-border:none;
-border-radius:6px;
-font-weight:bold;
-cursor:pointer;
-transition:0.3s;
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
 }
 
-button:hover{
-background:#1d4ed8;
-transform:scale(1.03);
+select, input, textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
-#planList{
-margin-top:20px;
-width:320px;
-padding:0;
+textarea {
+  min-height: 100px;
 }
 
-#planList li{
-background:white;
-color:black;
-margin:8px 0;
-padding:10px;
-border-radius:6px;
-list-style:none;
-box-shadow:0 3px 6px rgba(0,0,0,0.2);
+.btn {
+  background: #4a69bd;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #1e3799;
+}
+
+.btn.danger {
+  background: #e74c3c;
+}
+
+.btn.danger:hover {
+  background: #c0392b;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #27ae60;
+}
+
+#progressBox {
+  background: #f1f2f6;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.note-display {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  min-height: 50px;
+}
+#progressBox {
+  background: #f1f2f6;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+#progressBar {
+  height: 20px;
+  background: linear-gradient(90deg, #27ae60, #2ecc71);
+  border-radius: 8px;
+  width: 0%;
+  transition: width 0.4s ease;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  line-height: 20px;
+}
+
+
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #4a69bd;
+  color: white;
+  margin-top: 2rem;
 }
