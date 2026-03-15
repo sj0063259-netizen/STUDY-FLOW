@@ -1,87 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudyFlow</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StudyFlow - Smart Study Planner</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
+<header class="navbar">
 
-  <header>
-    <h1>📘 StudyFlow</h1>
-    <p class="subtitle">Your Smart Study Planner</p>
-  </header>
+<h1 class="logo">StudyFlow</h1>
 
-  <main class="container">
+<button class="menu-toggle">☰</button>
 
-    <section class="planner">
-      <h2>Plan Your Study</h2>
+<nav class="nav-links">
+<a href="#planner">Planner</a>
+<a href="#notes">Notes</a>
+<a href="#progress">Progress</a>
+<a href="#books">Books</a>
+</nav>
 
-      <label for="course">Select Course</label>
-      <select id="course" onchange="loadSubjects()">
-        <option value="">Select Course</option>
-        <option value="ee">Electrical Engineering</option>
-        <option value="cs">Computer Science</option>
-      </select>
+<button id="themeToggle">🌙</button>
 
-      <label for="subject">Select Subject</label>
-      <select id="subject" onchange="showSuggestions(); showBooks();">
-        <option value="">Select Subject</option>
-      </select>
+</header>
 
-      <label for="examDate">Exam Date</label>
-      <input type="date" id="examDate">
 
-      <label for="topics">Total Topics</label>
-      <input type="number" id="topics" placeholder="Enter number of topics">
+<main class="container">
 
-      <button class="btn" onclick="generatePlan()">Generate Study Plan</button>
-      <p id="suggestion" class="highlight"></p>
-    </section>
+<section class="dashboard">
 
-    <section>
-      <h2>📌 Suggested Important Topics</h2>
-      <ul id="topicSuggestion"></ul>
-    </section>
-
-    <section>
-      <h2>📚 Recommended Books</h2>
-      <ul id="bookList"></ul>
-    </section>
-
-    <section>
-      <h2>📅 Your Study Plan</h2>
-      <div id="progressBox">
-        <p id="progressText">Progress: 0%</p>
-      </div>
-      <ul id="planList"></ul>
-    </section>
-
-    <section>
-      <h2>📝 Topic Notes</h2>
-      <select id="topicSelect">
-        <option value="">Select Topic</option>
-      </select>
-      <textarea id="topicNoteInput" placeholder="Write notes for selected topic"></textarea>
-      <div class="note-buttons">
-        <button class="btn" onclick="saveTopicNote()">Save Note</button>
-        <button class="btn danger" onclick="deleteTopicNote()">Delete Note</button>
-      </div>
-      <div id="topicNotesDisplay" class="note-display"></div>
-    </section>
-    <div id="progressBox">
-  <p id="progressText">Progress: 0%</p>
-  <div id="progressBar"></div>
+<div class="stat-card">
+<h3 id="topicCount">0</h3>
+<p>Topics Completed</p>
 </div>
 
+<div class="stat-card">
+<h3 id="notesCount">0</h3>
+<p>Notes Written</p>
+</div>
 
-  </main>
+<div class="stat-card">
+<h3 id="fileCount">0</h3>
+<p>Files Uploaded</p>
+</div>
 
-  <footer>
-    <p>Made with ❤️ for smarter studying</p>
-  </footer>
+</section>
+<!-- STUDY PLANNER -->
 
-  <script src="script.js"></script>
+<section class="card" id="planner">
+
+<h2>Study Planner</h2>
+
+<label>Course</label>
+
+<select id="course">
+<option>Select Course</option>
+<option>Electrical Engineering</option>
+<option>Computer Science</option>
+</select>
+
+
+<label>Subject</label>
+
+<select id="subject">
+<option>Select Subject</option>
+<option>Basic Electrical</option>
+<option>Mathematics</option>
+</select>
+
+
+<label>Topic</label>
+
+<select id="topic">
+<option>Select Topic</option>
+<option>AC Circuits</option>
+<option>DC Circuits</option>
+<option>Kirchhoff Law</option>
+</select>
+
+
+<button id="generatePlan">Generate Study Plan</button>
+
+<p id="planOutput"></p>
+
+</section>
+<section class="card">
+
+<h2>Smart Study Reminder</h2>
+
+<p id="studyReminder">No study history yet.</p>
+
+</section>
+<section class="card">
+
+<h2>Automatic Study Timetable</h2>
+
+<label>Days until exam</label>
+
+<input type="number" id="examDays" placeholder="Enter number of days">
+
+<button id="generateSchedule">Generate Timetable</button>
+
+<ul id="scheduleOutput"></ul>
+
+</section>
+<!-- TOPIC GUIDANCE -->
+
+<section class="card">
+
+<h2>Topic Guidance</h2>
+
+<p><strong>Summary</strong></p>
+<p id="topicSummary"></p>
+
+<p><strong>Difficulty</strong> : <span id="topicDifficulty"></span></p>
+
+<p><strong>Study Time</strong> : <span id="topicTime"></span></p>
+
+<p><strong>Reference Book</strong> : <span id="topicBook"></span></p>
+
+</section>
+
+
+
+<!-- NOTES -->
+
+<section class="card" id="notes">
+
+<h2>Topic Notes</h2>
+
+<textarea id="notesInput" placeholder="Write your notes here"></textarea>
+
+<button id="saveNotes">Save Notes</button>
+
+<button id="viewNotes">View Notes</button>
+
+<p id="savedNotes"></p>
+
+</section>
+
+
+
+<!-- FILE UPLOAD -->
+
+<section class="card">
+
+<h2>Upload Study Material</h2>
+
+<input type="file" id="fileUpload">
+
+<button id="uploadBtn">Upload</button>
+
+<ul id="fileList"></ul>
+
+</section>
+
+
+
+<!-- PROGRESS -->
+
+<section class="card" id="progress">
+
+<h2>Study Progress</h2>
+
+<label>
+<input type="checkbox" class="topicCheck"> AC Circuits
+</label>
+
+<label>
+<input type="checkbox" class="topicCheck"> DC Circuits
+</label>
+
+<label>
+<input type="checkbox" class="topicCheck"> Kirchhoff Law
+</label>
+
+<div class="progress-container">
+<div id="progressBar"></div>
+</div>
+
+<p id="progressText">0% Completed</p>
+
+</section>
+
+
+
+<!-- BOOK RECOMMENDATION -->
+
+<section class="card" id="books">
+
+<h2>Recommended Books</h2>
+
+<ul id="bookList">
+
+<li>Basic Electrical Engineering – VK Mehta</li>
+
+<li>Engineering Circuit Analysis – Hayt</li>
+
+<li>Electrical Technology – BL Theraja</li>
+
+</ul>
+
+</section>
+
+
+</main>
+
+
+<script src="topics.js"></script>
+<script src="reminder.js"></script>
+<script src="main.js"></script>
+<script src="notes.js"></script>
+<script src="progress.js"></script>
+<script src="schedule.js"></script>
+<script src="theme.js"></script>
+
+
+
 </body>
+
 </html>
