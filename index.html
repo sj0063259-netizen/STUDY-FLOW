@@ -14,7 +14,6 @@
 <body>
 <header class="navbar">
 
-<h1 class="logo">StudyFlow</h1>
 
 <button class="menu-toggle">☰</button>
 
@@ -28,11 +27,19 @@
 <button id="themeToggle">🌙</button>
 
 </header>
+<section class="hero">
+<h1>StudyFlow</h1>
+<p>AI-Powered Learning Assistant for Students</p>
 
+<div class="hero-buttons">
+<button onclick="document.getElementById('planner').scrollIntoView()">Start Studying</button>
+</div>
+
+</section>
 
 <main class="container">
 
-<section class="dashboard">
+0<section class="dashboard">
 
 <div class="stat-card">
 <h3 id="topicCount">0</h3>
@@ -109,6 +116,7 @@
 <ul id="scheduleOutput"></ul>
 
 </section>
+
 <!-- TOPIC GUIDANCE -->
 
 <section class="card">

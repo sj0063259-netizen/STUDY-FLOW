@@ -11,8 +11,59 @@ background:linear-gradient(135deg,#1e293b,#020617);
 color:white;
 min-height:100vh;
 }
+.hero{
+text-align:center;
+padding:80px 20px;
+background:linear-gradient(135deg,#1f2937,#111827);
+color:white;
+}
 
+.hero h1{
+font-size:48px;
+margin-bottom:10px;
+}
 
+.hero p{
+font-size:18px;
+opacity:0.8;
+margin-bottom:20px;
+}
+
+.hero button{
+background:#ef4444;
+border:none;
+padding:12px 25px;
+color:white;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+}
+.progress-container{
+width:100%;
+background:#e5e7eb;
+border-radius:10px;
+overflow:hidden;
+height:20px;
+margin-top:10px;
+}
+
+#progressBar{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,#22c55e,#16a34a);
+transition:width 0.5s ease;
+}body.dark{
+background:#111;
+color:white;
+}
+
+body.dark .card{
+background:#1f2937;
+}
+
+body.dark .navbar{
+background:#111827;
+}
 /* NAVBAR */
 
 .navbar{
